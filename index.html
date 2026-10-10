@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nature Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- JavaScript changes this background based on the weather -->
+    <div class="background-image" id="background-image"></div>
+    <div class="background-overlay"></div>
+
+    <main class="weather-app">
+
+        <header class="app-header">
+            <a class="brand" href="#" aria-label="Nature Weather home">
+                <span>🌿</span> Nature Weather
+            </a>
+            <span class="live-label">
+                <span class="live-dot"></span> Live weather
+            </span>
+        </header>
+
+        <section class="hero">
+            <p class="eyebrow">YOUR WEATHER, YOUR WORLD</p>
+            <h1>Feel the weather.</h1>
+            <p class="hero-text">
+                Discover what's happening outside, wherever you are.
+            </p>
+
+            <form id="search-form" class="search-form">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <input type="text" id="city-input" placeholder="Search a city..." aria-label="City name"
+                    autocomplete="off" required>
+                <button type="submit" id="search-button">Search</button>
+            </form>
+
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="weather-result" class="weather-content" hidden>
+
+            <div class="current-weather glass-card">
+
+                <div class="current-top">
+                    <div>
+                        <p class="eyebrow">CURRENT WEATHER</p>
+                        <h2 id="city-name">City</h2>
+                        <p id="current-date" class="muted"></p>
+                    </div>
+
+                    <div class="weather-icon" id="weather-icon" aria-hidden="true">☀️</div>
+                </div>
+
+                <div class="temperature-row">
+                    <p id="temperature" class="temperature">--°</p>
+                    <div class="temperature-description">
+                        <p id="description">Loading weather...</p>
+                        <p class="muted">Feels like nature's own forecast</p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💧</span>
+                        <div>
+                            <p class="detail-label">Humidity</p>
+                            <p id="humidity" class="detail-value">--%</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-icon">💨</span>
+                        <div>
+                            <p class="detail-label">Wind speed</p>
+                            <p id="wind" class="detail-value">-- km/h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="forecast-section glass-card">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">PLAN AHEAD</p>
+                        <h2>Next 5 days</h2>
+                    </div>
+                    <span class="forecast-badge">5-DAY FORECAST</span>
+                </div>
+
+                <div id="forecast-list" class="forecast-list">
+                    <!-- JavaScript inserts forecast days here -->
+                </div>
+            </section>
+
+            <p class="data-credit">
+                Weather data by Open-Meteo
+            </p>
+
+        </section>
+
+        <footer class="app-footer">
+            Made for curious minds and cloudy skies <span>✦</span>
+        </footer>
+
+    </main>
+</body>
+
+</html>
